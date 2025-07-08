@@ -1,12 +1,15 @@
 import requests
+import os
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 import time
 from datetime import datetime, timezone, timedelta
+from dotenv import load_dotenv
+load_dotenv()
+CMC_API_KEY= os.getenv("API_KEY")
 
-# ========== SET YOUR API KEY ==========
-CMC_API_KEY = '6a63fb05-c737-4eb8-a128-48e9586717a5'  # Replace with your actual CoinMarketCap key
+
 
 # ========== UTILITY FUNCTIONS ==========
 

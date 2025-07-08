@@ -5,6 +5,8 @@ import joblib
 import discord
 import asyncio
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 from get_things import (
     preprocess_combined,
@@ -13,10 +15,9 @@ from get_things import (
     fetch_coinmarketcap,
     CMC_API_KEY
 )
-
+DISCORD_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 # ========== CONFIG ==========
-DISCORD_TOKEN ="MTM4ODk2OTUyMDc4OTcyMTM2OQ.GrTCL8.FoXLN51O0n8DEwL8L_IipyeBUaOsgJMIH5GMaI" # Set this in your environment
-CHANNEL_ID = 1389318386244390934
+CHANNEL_ID = """123456789101112"""  # Replace with your actual channel ID
 MODEL_PATH = "crypto_investment_model.pkl"
 
 # ========== DISCORD SETUP ==========

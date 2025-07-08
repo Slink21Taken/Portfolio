@@ -32,10 +32,15 @@ logger = logging.getLogger(__name__)  #Initialize logging for disc (dont work)
 
 # === Load environment ===
 load_dotenv()
-
+WS_API_KEY = os.getenv("WS_API_KEY")
+if not WS_API_KEY:  #Check if WS_API_KEY is set
+    raise Exception("WS_API_KEY environment variable not set")
+HTTP_API_KEY = os.getenv("HTTP_API_KEY")
+if not HTTP_API_KEY:  #Check if HTTP_API_KEY is set
+    raise Exception("HTTP_API_KEY environment variable not set")
 # === Config ===
-HELIUS_WS = "wss://mainnet.helius-rpc.com/?api-key=e529e978-f897-4451-b786-650d4fbc73cc"
-HELIUS_HTTP = "https://mainnet.helius-rpc.com/?api-key=e529e978-f897-4451-b786-650d4fbc73cc"
+HELIUS_WS = "wss://mainnet.helius-rpc.com/?api-key=replce_with_your_ws_api_key"  #Replace with your WS API key
+HELIUS_HTTP = "https://mainnet.helius-rpc.com/?api-key=replace_with_your_http_api_key"  #Replace
 
 TARGET_PROGRAM_ID = "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8"
 WRAPPED_SOL_MINT = "So11111111111111111111111111111111111111112"  # Wrapped SOL
